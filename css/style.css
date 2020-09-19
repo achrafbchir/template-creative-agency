@@ -18,7 +18,7 @@ h1, h2, h3, h4, h5, h6, ul{
 
 /* start header */
 
-.header{
+header{
     height: 800px;
     background-image: url('../images/background.jpg');
     background-size: cover;
@@ -30,13 +30,14 @@ h1, h2, h3, h4, h5, h6, ul{
     background-color: #000;
 }
 */
-.header .navbar{
+
+header .container :first-of-type{ /* == header .container > div:first-of-type */
     display: flex;
     align-items: center;
     height: 100px;
 }
 
-.header .navbar-list{
+header nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -47,19 +48,19 @@ h1, h2, h3, h4, h5, h6, ul{
 }
 
 /* no need for tis float
-.header .navbar h1{
+.header nav h1{
     float: left;
 }
 */
 
-.header .navbar ul
+header nav ul
 {
     list-style: none;
     overflow: hidden;
     display: flex;
 }
 
-.header .navbar ul:first-of-type li
+header nav ul:first-of-type li
 {
     margin-right: 45px;
     font-weight: bold;
@@ -67,14 +68,14 @@ h1, h2, h3, h4, h5, h6, ul{
 
 
 
-.header .navbar ul:nth-of-type(2) li
+header nav ul:nth-of-type(2) li
 {
     margin-right: 20px;
     font-weight: bold;
     padding-inline-start: 0;
 }
 
-.header .navbar ul li a{
+header nav ul li a{
     text-decoration: none;
     color: #FFF;
     font-size: 14px;
