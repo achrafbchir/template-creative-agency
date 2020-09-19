@@ -4,6 +4,13 @@
     box-sizing: border-box;
 }
 
+
+h1, h2, h3, h4, h5, h6, ul{
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+}
+
 .container{
     height: 100%;
     padding: 0 10%;
@@ -16,14 +23,13 @@
     background-image: url('../images/background.jpg');
     background-size: cover;
     background-position: center center;
-    /*filter: opacity(80%); */
 }
 
-h1, h2, h3, h4, h5, h6, ul{
-    margin-block-start: 0;
-    margin-block-end: 0;
+/*
+.header .container{
+    background-color: #000;
 }
-
+*/
 .header .navbar{
     display: flex;
     align-items: center;
@@ -37,13 +43,14 @@ h1, h2, h3, h4, h5, h6, ul{
     width: 100%;
     overflow: hidden;
     color: #FFF;
-    filter: brightness(100%);
     font-family: "Overpass", Sans-serif;
 }
 
+/* no need for tis float
 .header .navbar h1{
     float: left;
 }
+*/
 
 .header .navbar ul
 {
@@ -52,10 +59,19 @@ h1, h2, h3, h4, h5, h6, ul{
     display: flex;
 }
 
-.header .navbar ul li:not(:last-of-type)
+.header .navbar ul:first-of-type li
 {
-    margin: 0 17px;
+    margin-right: 45px;
     font-weight: bold;
+}
+
+
+
+.header .navbar ul:nth-of-type(2) li
+{
+    margin-right: 20px;
+    font-weight: bold;
+    padding-inline-start: 0;
 }
 
 .header .navbar ul li a{
@@ -63,6 +79,20 @@ h1, h2, h3, h4, h5, h6, ul{
     color: #FFF;
     font-size: 14px;
     text-transform: capitalize;
+    position: relative;
+    padding: 20px 0;
+}
+
+
+li.active::after
+{
+    content: '';
+    position: absolute;
+    width: 50%;
+    bottom: 0;
+    height: 3px;
+    background:red;
+    display:block;
 }
 
 /* end header */
