@@ -146,7 +146,7 @@ footer section:first-of-type .container ul li{
     align-items: center;
 }
 
-footer section:first-of-type .container a{
+footer section:first-of-type .container > a{
     border: 1px solid #e9204f;
 }
 
