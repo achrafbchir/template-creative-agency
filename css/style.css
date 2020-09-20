@@ -51,7 +51,7 @@ header nav{
 
 header nav a{
     font-size: 30px;
-    font-family: "Overpass", Sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 
@@ -123,8 +123,33 @@ footer section:first-of-type .container{
 }
 
 
-footer section:first-of-type .container ul, footer section:first-of-type .container h1, footer section:first-of-type .container a {
+footer section:first-of-type .container ul{
     flex-basis: 30%;
+}
+
+footer section:first-of-type .container h1{
+    flex-basis: 40%;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+footer section:first-of-type .container > a{
+    flex-basis: 20%;
+    text-align: center;
+    padding: 15px 0;
+    outline: 2px solid #e9204f;
+    border: 2px solid #000;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+footer section:first-of-type .container > a:hover{
+    background-color: #e9204f;
+    width: 100%;
+    -webkit-transition: all 1s ease-in-out 0s;
+    transition: all 5s ease-in-out 0s;
+    
 }
 
 footer section:first-of-type .container ul{
@@ -146,9 +171,6 @@ footer section:first-of-type .container ul li{
     align-items: center;
 }
 
-footer section:first-of-type .container > a{
-    border: 1px solid #e9204f;
-}
 
 footer section:nth-of-type(2){
     height: 20%;
