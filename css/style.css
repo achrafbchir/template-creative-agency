@@ -195,6 +195,7 @@ li.active::after
     flex-basis: 33.333%;
     padding: 100px 40px;
     color: #000;
+    animation: colorizeBackgroundOut .5s ease forwards;
 }
 
 
@@ -210,6 +211,7 @@ li.active::after
     display: flex;
     flex-direction: column;
     align-items: center;
+    animation: moveOut .5s ease forwards;
 }
 
 .services .services-body .services-list a h3{
@@ -231,9 +233,10 @@ li.active::after
 }
 
 .services .services-body .services-list a:hover{
-    background-color: #e9204f ;
+    /*background-color: #e9204f ;
     color: #fff !important;
-    transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;*/
+    animation: colorizeBackgroundIn .5s ease forwards;
 }
 
 .services .services-body .services-list a:hover p, .services .services-body .services-list a:hover h3, .services .services-body .services-list a:hover i{
@@ -242,8 +245,62 @@ li.active::after
 }
 
 .services .services-body .services-list a:hover section{
-    transform: translateY(-20px);
-    transition: all .5s ease;
+    animation: moveIn .5s ease forwards;
+}
+
+@keyframes colorizeBackgroundIn{
+    0%{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 420px;
+        flex-basis: 33.333%;
+        padding: 100px 40px;
+        color: #000;
+    }
+    100%{
+        background-color: #e9204f ;
+        color: #fff !important;
+    }
+}
+
+@keyframes colorizeBackgroundOut{
+    0%{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 420px;
+        flex-basis: 33.333%;
+        padding: 100px 40px;
+        background-color: #e9204f ;
+        color: #fff !important;
+    }
+    100%{
+        background-color: none ;
+        color: #000 !important;
+    }
+}
+
+@keyframes moveIn{
+    0%{
+        color: #000 !important;
+        transform: translateY(0);
+    }
+    100%{
+        color: #fff !important;
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes moveOut{
+    0%{
+        color: #fff !important;
+        transform: translateY(-20px);
+    }
+    100%{
+        color: #000 !important;
+        transform: translateY(0px);
+    }
 }
 
 /* end services */
