@@ -17,9 +17,13 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .container{
+    /* old container
     height: 100%;
     width: 100%;
     padding: 0 10%;
+    */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* start header */
@@ -33,10 +37,11 @@ header{
 }
 
 /*
-.header .container{
-    background-color: #000;
-}
-*/
+header .container{
+    background-color: #000 !important;
+    opacity: .7;
+}*/
+
 
 header .container > div:first-of-type{ /* == header .container > div:first-of-type */
     display: flex;
@@ -490,12 +495,14 @@ li.active::after
 .about .about-team .team-element{
     position: relative;
     height: fit-content;
+    flex-basis: 32%;
 }
 
 
 
 .about .about-team .team-element img{
     display: block;
+    width: 100%;
 }
 
 .about .about-team .team-element .team-element-text{
@@ -598,6 +605,42 @@ li.active::after
 }
 /* end testimonials */
 
+/* start blog */
+
+.blog{
+    height: 890px;
+    padding: 120px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000;
+    position: relative;
+}
+
+.blog .container{
+    text-align: center;
+}
+
+.blog h1{
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: capitalize;
+    color: #FFF;
+}
+
+.blog p{
+    color: #747474;
+    line-height: 27px;
+    font-size: 16px;
+    font-family: "Roboto", Sans-serif;
+    margin-bottom: 100px;
+    width: 450px;
+    margin: 0 auto;
+}
+
+
+/* end blog */
 
 /* start footer */
 
@@ -606,8 +649,13 @@ footer{
     overflow: hidden;
 }
 
+footer section{
+    display: flex;
+}
+
 footer section .container{
     display: flex;
+    flex-direction: space-between;
 }
 
 footer section:first-of-type{
