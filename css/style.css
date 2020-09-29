@@ -647,7 +647,11 @@ li.active::after
 
 footer{
     height: 430px;
-    overflow: hidden;
+    position: relative;
+}
+
+footer .line{
+    height: 100%;
 }
 
 footer section .container{
