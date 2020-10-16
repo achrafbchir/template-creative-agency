@@ -34,7 +34,7 @@ header {
   color: #FFF;
 }
 header .overlay {
-  backdrop-filter: brightness(50%);
+  backdrop-filter: brightness(40%);
   height: 100%;
 }
 header .overlay .container > div:first-of-type {
@@ -48,7 +48,6 @@ header .overlay .container > div:first-of-type nav {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  overflow: hidden;
   font-family: "Overpass", Sans-serif;
 }
 header .overlay .container > div:first-of-type nav a {
@@ -57,12 +56,34 @@ header .overlay .container > div:first-of-type nav a {
 }
 header .overlay .container > div:first-of-type nav ul {
   list-style: none;
-  overflow: hidden;
   display: flex;
 }
 header .overlay .container > div:first-of-type nav ul:first-of-type li {
+  position: relative;
   margin-right: 45px;
   font-weight: bold;
+}
+header .overlay .container > div:first-of-type nav ul:first-of-type li a {
+  height: 100%;
+}
+header .overlay .container > div:first-of-type nav ul:first-of-type li a.active::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  bottom: 0;
+  height: 1px;
+  background: red;
+  display: block;
+}
+header .overlay .container > div:first-of-type nav ul:first-of-type li a:hover::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  bottom: 0;
+  height: 1px;
+  background: red;
+  display: block;
+  transition: all 3.5s ease;
 }
 header .overlay .container > div:first-of-type nav ul:nth-of-type(2) li {
   margin-right: 20px;
@@ -71,20 +92,12 @@ header .overlay .container > div:first-of-type nav ul:nth-of-type(2) li {
 }
 header .overlay .container > div:first-of-type nav ul li a {
   text-decoration: none;
+  font-family: "Overpass", Sans-serif;
   color: #FFF;
   font-size: 14px;
   text-transform: capitalize;
   position: relative;
-  padding: 20px 0;
-}
-header .overlay .container > div:first-of-type nav ul li .active::after {
-  content: "";
-  position: absolute;
-  width: 50%;
-  bottom: 0;
-  height: 3px;
-  background: red;
-  display: block;
+  padding: 10px 0;
 }
 header .overlay .container > div:nth-of-type(2) {
   /* == header .container > div:first-of-type */

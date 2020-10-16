@@ -35,7 +35,7 @@ header{
     background-position: center center;
     color: #FFF;
     .overlay{
-        backdrop-filter: brightness(50%);
+        backdrop-filter: brightness(40%);
         height: 100%;
         .container
         { 
@@ -48,7 +48,6 @@ header{
                     align-items: center;
                     justify-content: space-between;
                     width: 100%;
-                    overflow: hidden;
                     font-family: "Overpass", Sans-serif;
                     a{
                         font-size: 30px;
@@ -57,13 +56,37 @@ header{
                     ul
                     {
                         list-style: none;
-                        overflow: hidden;
                         display: flex;
                         &:first-of-type
                         {
                             li{
+                                position: relative;
                                 margin-right: 45px;
                                 font-weight: bold;
+                                a{
+                                    height: 100%;
+                                    &.active::after
+                                    {
+                                        content: '';
+                                        position: absolute;
+                                        width: 20px;
+                                        bottom: 0;
+                                        height: 1px;
+                                        background:red;
+                                        display:block;
+                                    }
+                                    &:hover::after
+                                    {
+                                        content: '';
+                                        position: absolute;
+                                        width: 20px;
+                                        bottom: 0;
+                                        height: 1px;
+                                        background:red;
+                                        display:block;
+                                        transition: all 3.5s ease;
+                                    }
+                                }
                             }
                         }
                         &:nth-of-type(2) 
@@ -77,22 +100,14 @@ header{
                         li{
                             a{
                                 text-decoration: none;
+                                font-family: "Overpass", Sans-serif;
                                 color: #FFF;
                                 font-size: 14px;
                                 text-transform: capitalize;
                                 position: relative;
-                                padding: 20px 0;
+                                padding: 10px 0;
                             }
-                            .active::after
-                            {
-                                content: '';
-                                position: absolute;
-                                width: 50%;
-                                bottom: 0;
-                                height: 3px;
-                                background:red;
-                                display:block;
-                            }
+                            
                         }
                     }
                 }
