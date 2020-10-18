@@ -630,13 +630,18 @@ header{
             .blog-item{
                 position: relative;
                 height: 400px;
-                flex-basis: 32%;
+                width: 32%;
                 background-color: #f3f3f3;
-                div img{
-                    display: block;
-                    width: 100%;
-                    opacity: 0;
-                    object-fit: contain;
+                div
+                { 
+                    height: 100%;
+                    img{
+                        display: block;
+                        height: 100%;
+                        max-width: 100%;
+                        opacity: 0;
+                        object-fit: cover;
+                    }
                 }
                 .blog-item-text{
                     position: absolute;
