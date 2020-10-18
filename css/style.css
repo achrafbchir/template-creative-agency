@@ -271,7 +271,6 @@ header .overlay .container > div:nth-of-type(2) a {
 /* end services */
 /* start selected-projects */
 .selected-projects {
-  height: 890px;
   padding: 120px 0;
   display: flex;
   flex-direction: column;
@@ -289,14 +288,13 @@ header .overlay .container > div:nth-of-type(2) a {
   text-transform: capitalize;
   color: #FFF;
 }
-.selected-projects .container p {
+.selected-projects .container > p {
   color: #747474;
   line-height: 27px;
   font-size: 16px;
   font-family: "Roboto", Sans-serif;
-  margin-bottom: 100px;
   width: 450px;
-  margin: 0 auto;
+  margin: 0 auto 70px auto;
 }
 .selected-projects .container ul {
   display: flex;
@@ -308,13 +306,40 @@ header .overlay .container > div:nth-of-type(2) a {
   display: flex;
   color: #FFF;
   position: relative;
+  overflow: hidden;
+  height: 330px;
+  width: 32%;
+  margin-bottom: 20px;
 }
 .selected-projects .container ul li div img {
-  max-width: 382px;
-  transition: all 0.5s;
+  height: 100%;
+  max-width: 100%;
+  filter: brightness(100%);
+  transform: scale(1);
+  transition: all 0.3s;
 }
-.selected-projects .container ul:hover div img {
-  transform: scale(0.8);
+.selected-projects .container ul li .team-element-text {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.selected-projects .container ul li:hover div img {
+  transform: scale(1.4);
+  filter: brightness(30%);
+  transition: all 0.3s;
+}
+.selected-projects .container ul li:hover .team-element-text {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 /*
