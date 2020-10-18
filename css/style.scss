@@ -163,7 +163,7 @@ header{
             & > div:nth-of-type(2){ /* == header .container > div:first-of-type */
                 display: flex;
                 flex-direction: column;
-                justify-content: space-between;
+                justify-content: center;
                 align-items: center;
                 height: 500px;
                 max-width: 650px;
