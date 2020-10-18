@@ -17,13 +17,17 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .container{
-    /* old container
+    /* old container */
     height: 100%;
     width: 100%;
     padding: 0 10%;
-    */
+    @media screen and (max-width: 1000px) {
+        padding: 0 5%;
+    }
+    /*
     width: 1300px;
     margin: 0 auto;
+    */
 }
 
 @mixin fill-anchor($outline, $border ,$parent-background-color, $child-background-color, $text-color) {
@@ -668,7 +672,9 @@ footer{
                 li{
                     margin-right: 12px;
                     font-size: 20px;
-                    animation: goDown .2s forwards;
+                    transform: translateY(0px);
+                    transition: transform .2s ease;
+                    /*animation: goDown .2s forwards;*/
                     a{
                         border: 2px solid #e9204f;
                         border-radius: 50%;
@@ -680,7 +686,9 @@ footer{
                         align-items: center;
                     }
                     &:hover{
-                        animation: goUp .2s forwards;
+                        transform: translateY(-10px);
+                        transition: all .2s ease;
+                        /*animation: goUp .2s forwards;*/
                     }
                 }
             }

@@ -16,13 +16,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .container {
-  /* old container
+  /* old container */
   height: 100%;
   width: 100%;
   padding: 0 10%;
-  */
+  /*
   width: 1300px;
   margin: 0 auto;
+  */
+}
+@media screen and (max-width: 1000px) {
+  .container {
+    padding: 0 5%;
+  }
 }
 
 /* start header */
@@ -620,7 +626,9 @@ footer section:first-of-type .container ul {
 footer section:first-of-type .container ul li {
   margin-right: 12px;
   font-size: 20px;
-  animation: goDown 0.2s forwards;
+  transform: translateY(0px);
+  transition: transform 0.2s ease;
+  /*animation: goDown .2s forwards;*/
 }
 footer section:first-of-type .container ul li a {
   border: 2px solid #e9204f;
@@ -633,7 +641,9 @@ footer section:first-of-type .container ul li a {
   align-items: center;
 }
 footer section:first-of-type .container ul li:hover {
-  animation: goUp 0.2s forwards;
+  transform: translateY(-10px);
+  transition: all 0.2s ease;
+  /*animation: goUp .2s forwards;*/
 }
 footer section:first-of-type .container h1 {
   flex-basis: 40%;
