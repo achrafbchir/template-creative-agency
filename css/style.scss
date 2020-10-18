@@ -372,34 +372,45 @@ header{
                 overflow: hidden;
                 height: 330px;
                 width: 32%;
-                margin-bottom: 20px;
-                div{
-                    img{
-                        height: 100%;
-                        max-width: 100%;
-                        filter: brightness(100%);
-                        transform: scale(1);
-                        transition: all .3s;
-                    }
+                @media screen and (max-width: 1200px) {
+                    width: 50%;
                 }
-                .team-element-text{
-                    position: absolute;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    top: 0;
-                    left: 0;
-                    height: 100%;
+                @media screen and (max-width: 700px) {
                     width: 100%;
-                    opacity: 0;
-                    transform: translateX(-30px);
-                    transition: opacity .3s ease, transform .3s ease;
+                }
+                margin-bottom: 20px;
+                a{
+                    div{
+                        height: 100%;
+                        img{
+                            height: 100%;
+                            width: 100%;
+                            object-fit: cover;
+                            filter: brightness(100%);
+                            transform: scale(1);
+                            transition: all .3s;
+                        }
+                    }
+                    .team-element-text{
+                        position: absolute;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                        width: 100%;
+                        opacity: 0;
+                        color: #FFF;
+                        transform: translateX(-30px);
+                        transition: opacity .3s ease, transform .3s ease;
+                    }
                 }
                 &:hover 
                 {
                     div{ 
                         img{
-                            transform: scale(1.4);
+                            transform: scale(1.2);
                             filter: brightness(30%);
                             transition: all .3s;
                         }

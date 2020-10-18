@@ -311,14 +311,28 @@ header .overlay .container > div:nth-of-type(2) a {
   width: 32%;
   margin-bottom: 20px;
 }
-.selected-projects .container ul li div img {
+@media screen and (max-width: 1200px) {
+  .selected-projects .container ul li {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .selected-projects .container ul li {
+    width: 100%;
+  }
+}
+.selected-projects .container ul li a div {
   height: 100%;
-  max-width: 100%;
+}
+.selected-projects .container ul li a div img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
   filter: brightness(100%);
   transform: scale(1);
   transition: all 0.3s;
 }
-.selected-projects .container ul li .team-element-text {
+.selected-projects .container ul li a .team-element-text {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -328,11 +342,12 @@ header .overlay .container > div:nth-of-type(2) a {
   height: 100%;
   width: 100%;
   opacity: 0;
+  color: #FFF;
   transform: translateX(-30px);
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 .selected-projects .container ul li:hover div img {
-  transform: scale(1.4);
+  transform: scale(1.2);
   filter: brightness(30%);
   transition: all 0.3s;
 }
