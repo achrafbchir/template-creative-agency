@@ -115,6 +115,7 @@ header .overlay .container > div:nth-of-type(2) {
   max-width: 650px;
   margin: 0 auto;
   text-align: center;
+  /*@mixin fill-anchor($outline, $border ,$parent-background-color, $child-background-color, $text-color)*/
 }
 header .overlay .container > div:nth-of-type(2) h1 {
   font-size: 60px;
@@ -128,18 +129,46 @@ header .overlay .container > div:nth-of-type(2) p {
   font-family: "Roboto", Sans-serif;
   margin-bottom: 40px;
 }
-header .overlay .container > div:nth-of-type(2) a {
+header .overlay .container > div:nth-of-type(2) > a {
+  position: relative;
+  padding: 20px 30px;
   text-align: center;
-  height: fit-content;
-  padding: 18px 43px;
-  /*outline: 2px solid #e9204f;*/
-  border: 2px solid #e9204f;
-  font-size: 18px;
+  background-color: #e9204f;
+  outline: 2px solid #e9204f;
+  border: none;
+}
+header .overlay .container > div:nth-of-type(2) > a .button-filler {
+  position: absolute;
+  height: 100%;
+  background-color: #FFF;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 0;
+  outline: none;
+  border: none;
+  -webkit-transition: all 1s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+header .overlay .container > div:nth-of-type(2) > a span {
+  color: #FFF;
+  font-size: 19px;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #e9204f;
-  border-radius: 2px;
-  text-transform: capitalize;
+  position: relative;
+  z-index: 999;
+  transition: all 0.3s ease-in-out 0s;
+}
+header .overlay .container > div:nth-of-type(2) > a:hover .button-filler {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  -webkit-transition: all 1s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+header .overlay .container > div:nth-of-type(2) > a:hover span {
+  color: #e9204f;
+  transition: all 0.3s ease-in-out 0s;
 }
 
 /* end header */
@@ -169,19 +198,48 @@ header .overlay .container > div:nth-of-type(2) a {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  /*@mixin fill-anchor($outline, $border ,$parent-background-color, $child-background-color, $text-color, $child-text-color)*/
 }
-.services .services-header .get-started a {
+.services .services-header .get-started > a {
+  position: relative;
+  padding: 20px 30px;
   text-align: center;
-  height: fit-content;
-  padding: 18px 43px;
-  outline: 2px solid #e9204f;
-  border: 2px solid #fff;
-  font-size: 18px;
+  background-color: #FFF;
+  outline: 1px solid #000;
+  border: 1px solid #FFF;
+}
+.services .services-header .get-started > a .button-filler {
+  position: absolute;
+  height: 100%;
+  background-color: #000;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 0;
+  outline: none;
+  border: none;
+  -webkit-transition: all 1s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+.services .services-header .get-started > a span {
+  color: #e9204f;
+  font-size: 19px;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
-  color: #e9204f;
-  background-color: #FFF;
-  border-radius: 2px;
+  position: relative;
+  z-index: 999;
+  transition: all 0.3s ease-in-out 0s;
+}
+.services .services-header .get-started > a:hover .button-filler {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  -webkit-transition: all 1s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+.services .services-header .get-started > a:hover span {
+  color: #FFF;
+  transition: all 0.3s ease-in-out 0s;
 }
 .services .services-body {
   display: flex;
@@ -680,8 +738,7 @@ footer section:first-of-type .container h1 {
 }
 footer section:first-of-type .container > a {
   position: relative;
-  padding: 15px 0;
-  flex-basis: 20%;
+  padding: 20px 30px;
   text-align: center;
   background-color: none;
   outline: 1px solid #e9204f;
@@ -702,17 +759,22 @@ footer section:first-of-type .container > a .button-filler {
 }
 footer section:first-of-type .container > a span {
   color: #FFF;
-  font-size: 20px;
+  font-size: 19px;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
   position: relative;
   z-index: 999;
+  transition: all 0.3s ease-in-out 0s;
 }
 footer section:first-of-type .container > a:hover .button-filler {
   position: absolute;
   width: 100%;
   z-index: 1;
   -webkit-transition: all 1s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+footer section:first-of-type .container > a:hover span {
+  color: #FFF;
   transition: all 0.3s ease-in-out 0s;
 }
 footer section:nth-of-type(2) {

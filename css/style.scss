@@ -30,11 +30,10 @@ h1, h2, h3, h4, h5, h6{
     */
 }
 
-@mixin fill-anchor($outline, $border ,$parent-background-color, $child-background-color, $text-color) {
+@mixin fill-anchor($outline, $border ,$parent-background-color, $child-background-color, $text-color, $child-text-color) {
     & > a{
         position: relative;
-        padding: 15px 0;
-        flex-basis: 20%;
+        padding: 20px 30px;
         text-align: center;
         background-color: $parent-background-color;
         outline: $outline;
@@ -55,11 +54,12 @@ h1, h2, h3, h4, h5, h6{
         
         span{
             color: $text-color;
-            font-size: 20px;
+            font-size: 19px;
             font-weight: bold;
             font-family: Arial, Helvetica, sans-serif;
             position: relative;
             z-index: 999;
+            transition: all .3s ease-in-out 0s;
         }
         &:hover{
             .button-filler{
@@ -67,6 +67,10 @@ h1, h2, h3, h4, h5, h6{
                 width: 100%;
                 z-index: 1;
                 -webkit-transition: all 1s ease-in-out 0s;
+                transition: all .3s ease-in-out 0s;
+            }
+            span{
+                color: $child-text-color;
                 transition: all .3s ease-in-out 0s;
             }
         }
@@ -181,19 +185,8 @@ header{
                     font-family: "Roboto", Sans-serif;
                     margin-bottom: 40px;
                 }
-                a{
-                    text-align: center;
-                    height: fit-content;
-                    padding: 18px 43px;
-                    /*outline: 2px solid #e9204f;*/
-                    border: 2px solid #e9204f;
-                    font-size: 18px;
-                    font-weight: bold;
-                    font-family: Arial, Helvetica, sans-serif;
-                    background-color: #e9204f;
-                    border-radius: 2px;
-                    text-transform: capitalize;
-                }
+                /*@mixin fill-anchor($outline, $border ,$parent-background-color, $child-background-color, $text-color)*/
+                @include fill-anchor(2px solid #e9204f, none, #e9204f, #FFF, #FFF, #e9204f);
             }
         }
     }
@@ -227,19 +220,8 @@ header{
             display: flex;
             align-items: center;
             justify-content: flex-end;
-            a {
-                text-align: center;
-                height: fit-content;
-                padding: 18px 43px;
-                outline: 2px solid #e9204f;
-                border: 2px solid #fff;
-                font-size: 18px;
-                font-weight: bold;
-                font-family: Arial, Helvetica, sans-serif;
-                color: #e9204f;
-                background-color: #FFF;
-                border-radius: 2px;
-            }
+            /*@mixin fill-anchor($outline, $border ,$parent-background-color, $child-background-color, $text-color, $child-text-color)*/
+            @include fill-anchor(1px solid #000, 1px solid #FFF, #FFF, #000, #e9204f, #FFF);
         }
     }
     .services-body{
@@ -770,7 +752,7 @@ footer{
                 font-size: 50px;
                 font-family: Arial, Helvetica, sans-serif;
             }
-            @include fill-anchor(1px solid #e9204f, 1px solid #000, none, #e9204f, #FFF);
+            @include fill-anchor(1px solid #e9204f, 1px solid #000, none, #e9204f, #FFF, #FFF);
         }
     }
     section:nth-of-type(2){
