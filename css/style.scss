@@ -198,8 +198,8 @@ header{
 /* start services */
 
 .services{
-    height: 1480px;
     width: 100%;
+    padding: 120px 0;
     .services-header{
         display: flex;
         position: relative;
@@ -255,7 +255,13 @@ header{
                 flex-direction: column;
                 align-items: center;
                 height: 420px;
-                flex-basis: 33.333%;
+                width: 33.333%;
+                @media screen and (max-width: 1200px) {
+                    width: 50%;
+                }
+                @media screen and (max-width: 700px) {
+                    width: 100%;
+                }
                 padding: 100px 40px;
                 color: #000;
                 background-color: none;
@@ -290,6 +296,7 @@ header{
                         line-height: 26px;
                         margin: 20px 0;
                         font-family: "Roboto", Sans-serif;
+                        text-align: center;
                     }
                 }
                 &:hover{

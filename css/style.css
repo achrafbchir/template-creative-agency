@@ -174,8 +174,8 @@ header .overlay .container > div:nth-of-type(2) > a:hover span {
 /* end header */
 /* start services */
 .services {
-  height: 1480px;
   width: 100%;
+  padding: 120px 0;
 }
 .services .services-header {
   display: flex;
@@ -274,11 +274,21 @@ header .overlay .container > div:nth-of-type(2) > a:hover span {
   flex-direction: column;
   align-items: center;
   height: 420px;
-  flex-basis: 33.333%;
+  width: 33.333%;
   padding: 100px 40px;
   color: #000;
   background-color: none;
   transition: background-color 0.5s ease, color 0.5s ease;
+}
+@media screen and (max-width: 1200px) {
+  .services .services-body .services-list a {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .services .services-body .services-list a {
+    width: 100%;
+  }
 }
 .services .services-body .services-list a:nth-of-type(2n+1) {
   background-color: #f3f3f3;
@@ -309,6 +319,7 @@ header .overlay .container > div:nth-of-type(2) > a:hover span {
   line-height: 26px;
   margin: 20px 0;
   font-family: "Roboto", Sans-serif;
+  text-align: center;
 }
 .services .services-body .services-list a:hover {
   background-color: #e9204f;
