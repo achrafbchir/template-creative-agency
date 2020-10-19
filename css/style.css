@@ -544,6 +544,7 @@ header .overlay .container > div:nth-of-type(2) a {
 }
 .blog .container .blog-list {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 .blog .container .blog-list .blog-item {
@@ -552,15 +553,29 @@ header .overlay .container > div:nth-of-type(2) a {
   width: 32%;
   background-color: #f3f3f3;
 }
-.blog .container .blog-list .blog-item div {
-  height: 100%;
+@media screen and (max-width: 1200px) {
+  .blog .container .blog-list .blog-item {
+    width: 50%;
+  }
 }
-.blog .container .blog-list .blog-item div img {
+@media screen and (max-width: 700px) {
+  .blog .container .blog-list .blog-item {
+    width: 100%;
+  }
+}
+.blog .container .blog-list .blog-item > div {
+  height: 100%;
+  overflow: hidden;
+}
+.blog .container .blog-list .blog-item > div img {
   display: block;
   height: 100%;
   max-width: 100%;
   opacity: 0;
+  filter: brightness(100%);
   object-fit: cover;
+  transform: scale(1);
+  transition: opacity 0.3s, filter 0.3s, transform 0.3s;
 }
 .blog .container .blog-list .blog-item .blog-item-text {
   position: absolute;
@@ -571,7 +586,6 @@ header .overlay .container > div:nth-of-type(2) a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: opacity 0.4s;
   padding: 50px;
 }
 .blog .container .blog-list .blog-item .blog-item-text h2, .blog .container .blog-list .blog-item .blog-item-text h4 {
@@ -585,12 +599,27 @@ header .overlay .container > div:nth-of-type(2) a {
   color: #999999;
   margin-bottom: 30px;
 }
-.blog .container .blog-list .blog-item:hover .blog-item-text h2, .blog .container .blog-list .blog-item:hover .blog-item-text h3 {
+.blog .container .blog-list .blog-item .blog-item-text-footer p {
+  color: #ACACAC;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-family: Overpass, Helvetica, Arial, sans-serif;
+  font-size: 13px;
+}
+.blog .container .blog-list .blog-item:hover .blog-item-text h2, .blog .container .blog-list .blog-item:hover .blog-item-text h4 {
   color: #FFF !important;
+}
+.blog .container .blog-list .blog-item:hover .blog-item-text p {
+  color: #c1c1c1;
+}
+.blog .container .blog-list .blog-item:hover .blog-item-text .blog-item-text-footer p {
+  color: #FFF;
 }
 .blog .container .blog-list .blog-item:hover div img {
   opacity: 1;
-  transition: all 0.4s;
+  filter: brightness(50%);
+  transform: scale(1.1);
+  transition: all 0.3s;
 }
 
 /* end blog */
