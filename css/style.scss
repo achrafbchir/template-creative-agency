@@ -116,27 +116,27 @@ header{
                                 font-weight: bold;
                                 a{
                                     height: 100%;
-                                    &.active::after
+                                    &::after
                                     {
                                         content: '';
                                         position: absolute;
-                                        width: 20px;
+                                        width: 0;
                                         bottom: 0;
-                                        height: 1px;
+                                        height: 2px;
                                         background:red;
                                         display:block;
+                                        transition: width .3s ease-in-out;
+                                    }
+                                    &.active::after{
+                                        width: 20px;
                                     }
                                     &:hover::after
                                     {
-                                        content: '';
-                                        position: absolute;
                                         width: 20px;
-                                        bottom: 0;
-                                        height: 1px;
-                                        background:red;
-                                        display:block;
-                                        transition: all 3.5s ease;
+                                        transition: all .3s ease-in-out;
                                     }
+                                    
+                                    
                                 }
                             }
                         }
