@@ -377,22 +377,41 @@ header {
   position: relative; }
   .about .about-header {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 50px; }
     .about .about-header .about-text {
       display: flex;
       flex-direction: column;
-      flex-basis: 40%; }
+      width: 40%; }
+      @media screen and (max-width: 1200px) {
+        .about .about-header .about-text {
+          text-align: center;
+          width: 100%; } }
+      @media screen and (max-width: 700px) {
+        .about .about-header .about-text {
+          text-align: center;
+          width: 100%; } }
       .about .about-header .about-text h1 {
         margin-block-end: 50px; }
     .about .about-header .about-statistics {
       display: flex;
-      flex-basis: 60%; }
+      flex-wrap: wrap;
+      width: 60%; }
+      @media screen and (max-width: 1200px) {
+        .about .about-header .about-statistics {
+          width: 100%; } }
+      @media screen and (max-width: 700px) {
+        .about .about-header .about-statistics {
+          width: 100%; } }
       .about .about-header .about-statistics div {
-        flex-basis: 33.3333%;
+        width: 33.3333%;
         padding: 10px;
         text-align: center;
         color: #000 !important; }
+        @media screen and (max-width: 700px) {
+          .about .about-header .about-statistics div {
+            width: 100%; } }
         .about .about-header .about-statistics div p {
           font-weight: 600px;
           font-size: 20px; }
@@ -410,11 +429,18 @@ header {
       margin: 0 auto; }
   .about .about-team {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between; }
     .about .about-team .team-element {
       position: relative;
       height: fit-content;
-      flex-basis: 32%; }
+      width: 32%; }
+      @media screen and (max-width: 1200px) {
+        .about .about-team .team-element {
+          width: 50%; } }
+      @media screen and (max-width: 700px) {
+        .about .about-team .team-element {
+          width: 100%; } }
       .about .about-team .team-element div img {
         display: block;
         width: 100%; }

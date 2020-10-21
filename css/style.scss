@@ -442,21 +442,41 @@ header{
     position: relative;
     .about-header{
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         margin-bottom: 50px;
         .about-text{
             display: flex;
             flex-direction: column;
-            flex-basis: 40%;
+            width: 40%;
+            
+            @media screen and (max-width: 1200px) {
+                text-align: center;
+                width: 100%;
+            }
+            @media screen and (max-width: 700px) {
+                text-align: center;
+                width: 100%;
+            }
             h1{
                 margin-block-end: 50px;
             }
         }
         .about-statistics{
             display: flex;
-            flex-basis: 60%;
+            flex-wrap: wrap;
+            width: 60%;
+            @media screen and (max-width: 1200px) {
+                width: 100%;
+            }
+            @media screen and (max-width: 700px) {
+                width: 100%;
+            }
             div{
-                flex-basis: 33.3333%;
+                width: 33.3333%;
+                @media screen and (max-width: 700px) {
+                    width: 100%;
+                }
                 padding: 10px;
                 text-align: center;
                 color: #000 !important;
@@ -483,11 +503,18 @@ header{
     }
     .about-team{
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         .team-element{
             position: relative;
             height: fit-content;
-            flex-basis: 32%;
+            width: 32%;
+            @media screen and (max-width: 1200px) {
+                width: 50%;
+            }
+            @media screen and (max-width: 700px) {
+                width: 100%;
+            }
             div img{
                 display: block;
                 width: 100%;
