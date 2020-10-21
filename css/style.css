@@ -146,27 +146,33 @@ header {
 /* start services */
 .services {
   width: 100%;
-  padding: 120px 0; }
+  padding: 0 0 120px 0; }
   .services .services-header {
     display: flex;
+    flex-wrap: wrap;
     position: relative;
     top: -100px;
-    height: 220px;
     background-color: #e9204f;
     color: #FFF;
     width: 100%;
     padding: 60px 80px;
     border-radius: 4px; }
     .services .services-header h1 {
-      flex-basis: 50%;
+      width: 50%;
       font-size: 40px;
       text-transform: capitalize; }
+      @media screen and (max-width: 700px) {
+        .services .services-header h1 {
+          width: 100%; } }
     .services .services-header .get-started {
-      flex-basis: 50%;
+      width: 50%;
       display: flex;
       align-items: center;
       justify-content: flex-end;
       /*@mixin fill-anchor($outline, $border ,$parent-background-color, $child-background-color, $text-color, $child-text-color)*/ }
+      @media screen and (max-width: 700px) {
+        .services .services-header .get-started {
+          width: 100%; } }
       .services .services-header .get-started > a {
         position: relative;
         padding: 20px 30px;
